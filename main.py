@@ -2,8 +2,12 @@ from flask import Flask, request, jsonify
 from skimage.metrics import structural_similarity as ssim
 import cv2
 import numpy as np
+from flask_cors import CORS 
 
 app = Flask(__name__)
+
+CORS(app, origins=["https://similar-image-detection.vercel.app"])
+
 
 def read_and_resize(file):
     img_array = np.frombuffer(file.read(), np.uint8)
