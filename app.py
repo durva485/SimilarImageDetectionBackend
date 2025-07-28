@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 
 app = Flask(__name__)
-CORS(app, resources={r"/compare": {"origins": "http://localhost:3000"}})  # ← Updated
+CORS(app, resources={r"/compare": {"origins": "https://similar-image-detection.vercel.app"}})  # ← Updated
 
 def read_and_resize(file):
     img_array = np.frombuffer(file.read(), np.uint8)
